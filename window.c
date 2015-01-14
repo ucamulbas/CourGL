@@ -689,7 +689,7 @@ static void draw() {
   int i,j;
   GLfloat dx,dz,distance;
 
-
+  glDisable(GL_BLEND);
   glUseProgram(_pId[3]);
   glDisable(GL_DEPTH_TEST);
   for(i=3;i<8;i++)
@@ -768,6 +768,7 @@ static void draw() {
 	  distance=sqrt(dx+dz);
 	  if(distance<=400)
 	    {
+	      glDisable(GL_BLEND);
 	      drawForet(i,j);
 	      if(p[i][j].id>=2 && p[i][j].id<BRULURE+(REPOUSSE/2))
 		drawSmoke(i,j);
